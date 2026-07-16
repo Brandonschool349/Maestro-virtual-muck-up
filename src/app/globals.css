@@ -30,3 +30,21 @@ body {
   color: var(--foreground);
   font-family: var(--font-body);
 }
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% center;
+  }
+
+  50% {
+    background-position: 100% center;
+  }
+
+  100% {
+    background-position: 0% center;
+  }
+}
+
+.animate-gradient {
+  animation: gradientMove 5s ease infinite;
+}
