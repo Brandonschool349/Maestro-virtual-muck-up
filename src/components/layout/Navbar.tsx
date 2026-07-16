@@ -5,17 +5,17 @@ import Button from '@/components/ui/Button';
 import Container from '@/components/ui/Container';
 
 const navLinks = [
-  { label: 'Inicio', href: '#' },
-  { label: 'Cursos', href: '#cursos' },
-  { label: 'Eventos', href: '#eventos' },
-  { label: 'Contacto', href: '#contacto' },
+  { label: 'Inicio', href: '/' },
+  { label: 'Cursos', href: '/courses' },
+  { label: 'Eventos', href: '/events' },
+  { label: 'Contacto', href: '/contact' },
 ];
 
 export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-surface/95 backdrop-blur-sm">
       <Container size="xl" className="flex h-20 items-center justify-between">
-        <Link href="#" className="flex items-center gap-3">
+        <Link href="/" className="flex items-center gap-3">
           <div className="flex h-10 w-10 items-center justify-center rounded-full bg-primary text-sm font-semibold text-white">
             MV
           </div>
