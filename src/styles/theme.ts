@@ -1,0 +1,120 @@
+export const theme = {
+  colors: {
+    brand: {
+      primary: '#1800AD',
+      red: '#FF3131',
+      yellow: '#FFB000',
+      green: '#00BF63',
+    },
+    background: {
+      canvas: '#F5F7FF',
+      base: '#FFFFFF',
+      elevated: '#F8FAFC',
+      muted: '#EEF2FF',
+      overlay: 'rgba(15, 23, 42, 0.06)',
+    },
+    surface: {
+      primary: '#FFFFFF',
+      secondary: '#F8FAFC',
+      tertiary: '#EEF2F7',
+      accent: '#F4F7FF',
+    },
+    text: {
+      primary: '#0F172A',
+      secondary: '#334155',
+      tertiary: '#64748B',
+      inverse: '#FFFFFF',
+      muted: '#94A3B8',
+    },
+    border: {
+      subtle: '#E2E8F0',
+      strong: '#CBD5E1',
+      accent: '#C7D2FE',
+      focus: '#1800AD',
+    },
+    state: {
+      success: '#00BF63',
+      warning: '#FFB000',
+      error: '#FF3131',
+      info: '#1800AD',
+    },
+  },
+  typography: {
+    fontFamily: {
+      heading: '"Hit and Run", sans-serif',
+      body: '"Josefin Sans", sans-serif',
+    },
+    fontSize: {
+      xs: '0.75rem',
+      sm: '0.875rem',
+      base: '1rem',
+      lg: '1.125rem',
+      xl: '1.25rem',
+      '2xl': '1.5rem',
+      '3xl': '1.875rem',
+      '4xl': '2.25rem',
+      '5xl': '3rem',
+    },
+    fontWeight: {
+      regular: 400,
+      medium: 500,
+      semibold: 600,
+      bold: 700,
+    },
+    lineHeight: {
+      tight: 1.2,
+      normal: 1.5,
+      relaxed: 1.7,
+    },
+  },
+  borderRadius: {
+    sm: '0.375rem',
+    md: '0.625rem',
+    lg: '0.875rem',
+    xl: '1.25rem',
+    full: '9999px',
+  },
+  shadows: {
+    sm: '0 1px 2px rgba(15, 23, 42, 0.06)',
+    md: '0 10px 30px rgba(15, 23, 42, 0.08)',
+    lg: '0 20px 45px rgba(15, 23, 42, 0.12)',
+    focus: '0 0 0 3px rgba(24, 0, 173, 0.2)',
+  },
+  spacingScale: {
+    0: '0px',
+    1: '0.25rem',
+    2: '0.5rem',
+    3: '0.75rem',
+    4: '1rem',
+    5: '1.25rem',
+    6: '1.5rem',
+    8: '2rem',
+    10: '2.5rem',
+    12: '3rem',
+    16: '4rem',
+    20: '5rem',
+    24: '6rem',
+  },
+  zIndex: {
+    navbar: 1000,
+    dropdown: 1100,
+    modal: 1200,
+    toast: 1300,
+  },
+  animationDurations: {
+    fast: '150ms',
+    base: '220ms',
+    slow: '350ms',
+    slower: '500ms',
+  },
+  transitionPresets: {
+    default: 'all 220ms cubic-bezier(0.2, 0.8, 0.2, 1)',
+    smooth: 'transform 220ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 220ms cubic-bezier(0.2, 0.8, 0.2, 1)',
+    enter: 'all 350ms cubic-bezier(0.16, 1, 0.3, 1)',
+    exit: 'all 200ms cubic-bezier(0.4, 0, 1, 1)',
+  },
+} as const;
+
+export type Theme = typeof theme;
+
+export default theme;
