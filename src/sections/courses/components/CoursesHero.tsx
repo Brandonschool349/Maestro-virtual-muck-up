@@ -1,49 +1,12 @@
 "use client";
 
 import {
-  Smartphone,
-  Palette,
-  FileText,
-  Globe,
-  ArrowRight,
   Sparkles,
 } from "lucide-react";
 
-
-const learningPaths = [
-  {
-    icon: Smartphone,
-    title: "Comunicación Digital",
-    description:
-      "Aprende a usar WhatsApp, correo y herramientas para conectarte.",
-    gradient:
-      "from-primary to-blue-500",
-  },
-  {
-    icon: Palette,
-    title: "Creatividad Digital",
-    description:
-      "Crea diseños, presentaciones y proyectos con herramientas fáciles.",
-    gradient:
-      "from-accent to-purple-500",
-  },
-  {
-    icon: FileText,
-    title: "Herramientas del Día a Día",
-    description:
-      "Aprende Word, Excel, documentos y herramientas útiles.",
-    gradient:
-      "from-[#FF3131] to-red-400",
-  },
-  {
-    icon: Globe,
-    title: "Vida Digital",
-    description:
-      "Explora internet, seguridad y tecnología paso a paso.",
-    gradient:
-      "from-[#00BF63] to-emerald-500",
-  },
-];
+import { courses } from "../data/courses";
+import Image from "next/image";
+import FeaturedCourseCard from "./FeaturedCourseCard";
 
 
 const tools = [
@@ -69,6 +32,7 @@ const tools = [
   },
 ];
 
+const featuredCourses = courses.filter(course => course.featured);
 
 export default function CoursesHero() {
 
@@ -455,7 +419,7 @@ Cursos destacados
 
 
 
-{/* CARDS */}
+{/* FEATURED COURSES */}
 
 <div
 className="
@@ -470,152 +434,16 @@ animate-fadeUp
 "
 >
 
-
 {
-learningPaths.map((item)=>{
-
-const Icon = item.icon;
-
-
-return (
-
-<div
-key={item.title}
-className="
-group
-relative
-overflow-hidden
-rounded-3xl
-bg-white/80
-dark:bg-white/5
-backdrop-blur-xl
-border
-border-white/40
-dark:border-white/10
-p-8
-shadow-xl
-hover:-translate-y-3
-hover:shadow-2xl
-transition-all
-duration-500
-"
->
-
-
-
-<div
-className={`
-absolute
-inset-0
-opacity-0
-group-hover:opacity-25
-bg-gradient-to-br
-${item.gradient}
-transition
-duration-500
-`}
-/>
-
-
-
-
-
-<div className="relative">
-
-
-
-<div
-className="
-w-14
-h-14
-rounded-2xl
-bg-primary/10
-flex
-items-center
-justify-center
-mb-6
-group-hover:scale-110
-transition-transform
-"
->
-
-<Icon
-size={30}
-className="text-primary"
-/>
-
-</div>
-
-
-
-
-
-<h3
-className="
-text-2xl
-font-bold
-mb-3
-"
->
-
-{item.title}
-
-</h3>
-
-
-
-
-<p
-className="
-text-muted-foreground
-mb-6
-"
->
-
-{item.description}
-
-</p>
-
-
-
-
-
-<button
-className="
-flex
-items-center
-gap-2
-font-semibold
-transition-colors
-group-hover:text-primary
-"
->
-
-Explorar
-
-<ArrowRight size={18}/>
-
-</button>
-
-
-
-</div>
-
-
-</div>
-
-
-)
-
-
-})
+featuredCourses.map((course)=>(
+  <FeaturedCourseCard
+    key={course.id}
+    course={course}
+  />
+))
 }
 
-
-
 </div>
-
-
 
 </div>
 
