@@ -2,13 +2,13 @@ import { notFound } from "next/navigation";
 
 import { courses } from "@/sections/courses/data/courses";
 
-// Estos componentes los iremos creando después
-// por ahora puedes comentar los que aún no existan.
+
 import CourseHero from "@/sections/courses/course-details/CourseHero";
-// import CourseStats from "@/sections/courses/course-details/CourseStats";
-// import CourseDescription from "@/sections/courses/course-details/CourseDescription";
-// import CourseVideo from "@/sections/courses/course-details/CourseVideo";
-// import CourseHighlights from "@/sections/courses/course-details/CourseHighlights";
+import CourseStats from "@/sections/courses/course-details/CoursesStats";
+import CourseDescription from "@/sections/courses/course-details/CourseDescription";
+import CourseHighlights from "@/sections/courses/course-details/CourseHighlights";
+import CourseTestimonials from "@/sections/courses/course-details/CourseTestimonials";
+import CourseCTA from "@/sections/courses/course-details/CourseCTA";
 
 type CoursePageProps = {
   params: Promise<{
@@ -32,9 +32,15 @@ export default async function CoursePage({
   return (
     <main className="min-h-screen bg-background">
       <CourseHero course={course} />
+      <CourseStats course={course} />
+      <CourseDescription course={course} />
+      <CourseHighlights course={course} />
+      <CourseTestimonials course={course} />
+      <CourseCTA course={course} />
+
 
       {/*
-      <CourseStats course={course} />
+      
 
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-6 py-14 lg:flex-row">
         <CourseDescription course={course} />

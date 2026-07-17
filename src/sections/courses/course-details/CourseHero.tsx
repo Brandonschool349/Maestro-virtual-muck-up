@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, Clock3, Users, Monitor } from "lucide-react";
+import { ArrowRight, Clock3, Users, Monitor, Award } from "lucide-react";
 import { motion } from "framer-motion";
 
 import Container from "@/components/ui/Container";
@@ -303,7 +303,7 @@ export default function CourseHero({
 
 
               <Badge>
-                {course.category}
+                {course.categories}
               </Badge>
 
 
@@ -535,37 +535,22 @@ export default function CourseHero({
 
 
               <HeroStat
-
-                icon={<Clock3 size={16}/>}
-
+                icon={<Clock3 />}
                 text={course.duration}
-
                 color={course.color}
+                />
 
-              />
-
-
-              <HeroStat
-
-                icon={<Users size={16}/>}
-
-                text={course.participants}
-
+                <HeroStat
+                icon={<Award />}
+                text={`Etapa ${course.stage}`}
                 color={course.color}
+                />
 
-              />
-
-
-
-              <HeroStat
-
-                icon={<Monitor size={16}/>}
-
+                <HeroStat
+                icon={<Monitor />}
                 text={course.modality}
-
                 color={course.color}
-
-              />
+                />
 
 
             </motion.div>
@@ -676,16 +661,47 @@ export default function CourseHero({
 
 
 
-             <Image
-                src={course.image || course.icon}
-                alt={course.title}
-                fill
-                className="
-                object-contain
-                scale-180
-                drop-shadow-xl
-                "
-                />
+             {course.image || course.icon ? (
+
+            <Image
+            src={course.image || course.icon!}
+            alt={course.title}
+            fill
+            className="
+            object-contain
+            scale-180
+            drop-shadow-xl
+            "
+            />
+
+            ) : (
+
+            <div
+            className="
+            flex
+            h-full
+            w-full
+            items-center
+            justify-center
+            "
+            >
+
+            <span
+            className="
+            text-7xl
+            font-heading
+            opacity-20
+            "
+            style={{
+            color:course.color
+            }}
+            >
+            {course.title.charAt(0)}
+            </span>
+
+            </div>
+
+            )}
 
 
             </motion.div>
