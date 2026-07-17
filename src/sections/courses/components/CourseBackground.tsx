@@ -1,6 +1,14 @@
 type CourseBackgroundProps = {
-  pattern: "grid" | "waves" | "shapes" | "cards" | "slides";
-  color: string;
+  pattern:
+    | "grid"
+    | "waves"
+    | "shapes"
+    | "cards"
+    | "slides"
+    | "growth"
+    | "chat";
+
+  color:string;
 };
 
 export default function CourseBackground({
@@ -209,7 +217,7 @@ w-40
 h-24
 rounded-xl
 border-2
-opacity-[0.38]
+opacity-[0.68]
 animate-taskFloat
 "
 style={{
@@ -323,11 +331,184 @@ backgroundColor:color
 
 );
 
+case "growth":
+
+return(
+<div className="absolute inset-0 pointer-events-none overflow-hidden">
+
+
+<div
+className="
+absolute
+-bottom-4
+right-10
+flex
+items-end
+gap-2
+opacity-[0.12]
+"
+>
+
+<div
+className="
+w-8
+h-12
+rounded-t-xl
+animate-fadeUp
+"
+style={{
+backgroundColor:color
+}}
+/>
+
+
+<div
+className="
+w-8
+h-20
+rounded-t-xl
+animate-fadeUp
+[animation-delay:200ms]
+"
+style={{
+backgroundColor:color
+}}
+/>
+
+
+<div
+className="
+w-8
+h-32
+rounded-t-xl
+animate-fadeUp
+[animation-delay:400ms]
+"
+style={{
+backgroundColor:color
+}}
+/>
+
+
+<div
+className="
+w-8
+h-48
+rounded-t-xl
+animate-fadeUp
+[animation-delay:600ms]
+"
+style={{
+backgroundColor:color
+}}
+/>
+
+</div>
+
+
+
+<div
+className="
+absolute
+top-10
+right-32
+w-16
+h-16
+rounded-full
+opacity-[0.08]
+animate-pulse
+"
+style={{
+backgroundColor:color
+}}
+/>
+
+
+</div>
+);
+
+
+
+case "chat":
+
+return(
+<div className="absolute inset-0 pointer-events-none overflow-hidden">
+
+
+<div
+className="
+absolute
+top-8
+right-12
+opacity-[0.42]
+"
+>
+
+<div
+className="
+relative
+w-28
+h-20
+rounded-[2rem]
+rounded-br-md
+animate-slideFloat
+"
+style={{
+backgroundColor:color
+}}
+/>
+
+
+<div
+className="
+absolute
+top-14
+-left-12
+w-20
+h-14
+rounded-3xl
+rounded-bl-md
+animate-slideFloat
+[animation-delay:300ms]
+"
+style={{
+backgroundColor:color,
+opacity:0.8
+}}
+/>
+
+
+</div>
+
+
+
+<div
+className="
+absolute
+bottom-6
+right-40
+w-24
+h-24
+rounded-full
+border-[10px]
+opacity-[0.08]
+animate-wave
+"
+style={{
+borderColor:color
+}}
+/>
+
+
+</div>
+);
 
 default:
 return null;
 
 
 }
+
+
 
 }

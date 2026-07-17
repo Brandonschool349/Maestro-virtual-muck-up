@@ -85,13 +85,34 @@ export default function FeaturedCourseCard({
           }}
         >
 
+          {course.icon ? (
+
           <Image
-            src={course.icon}
-            alt={course.title}
-            width={38}
-            height={38}
-            className="object-contain"
+          src={course.icon}
+          alt={course.title}
+          width={38}
+          height={38}
+          className="object-contain"
           />
+
+          ) : (
+
+          <div
+          className="
+          h-[38px]
+          w-[38px]
+          rounded-lg
+          flex
+          items-center
+          justify-center
+          "
+          style={{
+          backgroundColor:`${course.color}22`
+          }}
+          >
+          </div>
+
+          )}
 
         </div>
 

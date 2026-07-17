@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { ArrowRight, Menu } from "lucide-react";
+import { ArrowRight, Menu, User } from "lucide-react";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -220,43 +220,170 @@ export default function Navbar() {
         {/* Right */}
 
         <div className="flex items-center gap-3">
-          <Button
-            variant="primary"
-            size="sm"
+
+          {/* Login / Perfil (Preparado para autenticación) */}
+
+          <button
             className={clsx(
               `
               group
 
+              relative
+
               hidden
-              md:inline-flex
+              md:flex
+
+              h-11
+              w-11
+
+              items-center
+              justify-center
 
               rounded-full
 
-              shadow-lg
+              border
+
+              backdrop-blur-xl
 
               transition-all
               duration-300
 
               hover:-translate-y-0.5
-              hover:shadow-xl
+              hover:scale-105
               `,
-              scrolled ? "px-4" : "px-5"
+              scrolled
+                ? `
+                  bg-white/10
+                  border-white/10
+                  hover:bg-white/20
+                `
+                : `
+                  bg-white/45
+                  border-white/35
+                  hover:bg-white/70
+                `
             )}
           >
-            Explorar cursos
+           
 
-            <ArrowRight
+            {/* Glow */}
+
+            <span
               className="
-              h-4
-              w-4
+              absolute
+              inset-0
+
+              rounded-full
+
+              bg-gradient-to-br
+              from-primary/10
+              to-brand-red/10
+
+              opacity-0
+
+              transition-opacity
+              duration-300
+
+              group-hover:opacity-100
+              "
+            />
+
+            <User
+              className="
+              relative
+
+              h-5
+              w-5
+
+              text-text-primary
 
               transition-transform
               duration-300
 
-              group-hover:translate-x-1
+              group-hover:scale-110
               "
             />
-          </Button>
+
+            {/* Tooltip */}
+
+            <span
+              className="
+              pointer-events-none
+
+              absolute
+              top-[calc(100%+12px)]
+              left-1/2
+
+              -translate-x-1/2
+              translate-y-1
+
+              whitespace-nowrap
+
+              rounded-full
+
+              bg-text-primary
+
+              px-3
+              py-1.5
+
+              text-[11px]
+              font-medium
+              text-white
+
+              opacity-0
+
+              shadow-xl
+
+              transition-all
+              duration-300
+
+              group-hover:translate-y-0
+              group-hover:opacity-100
+              "
+            >
+              Próximamente
+            </span>
+          </button>
+
+          <Link href="/courses">
+            <Button
+              variant="primary"
+              size="sm"
+              className={clsx(
+                `
+                group
+
+                hidden
+                md:inline-flex
+
+                rounded-full
+
+                shadow-lg
+
+                transition-all
+                duration-300
+
+                hover:-translate-y-0.5
+                hover:shadow-xl
+                `,
+                scrolled ? "px-4" : "px-5"
+              )}
+            >
+              Explorar cursos
+
+              <ArrowRight
+                className="
+                h-4
+                w-4
+
+                transition-transform
+                duration-300
+
+                group-hover:translate-x-1
+                "
+              />
+            </Button>
+          </Link>
 
           <button
             className="
@@ -288,6 +415,7 @@ export default function Navbar() {
           >
             <Menu className="h-5 w-5 text-text-primary" />
           </button>
+
         </div>
       </Container>
     </header>
