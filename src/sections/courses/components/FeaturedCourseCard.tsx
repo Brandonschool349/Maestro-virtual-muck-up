@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import type { Course } from "../data/courses";
@@ -14,10 +15,9 @@ export default function FeaturedCourseCard({
   course,
 }: FeaturedCourseCardProps) {
 
-  return (
+  const content = (
     <div
       className="
-      group
       relative
       overflow-hidden
       rounded-3xl
@@ -29,10 +29,11 @@ export default function FeaturedCourseCard({
       dark:border-white/10
       p-8
       shadow-xl
-      hover:-translate-y-3
-      hover:shadow-2xl
       transition-all
       duration-500
+      group-hover:-translate-y-3
+      group-hover:shadow-2xl
+      h-full
       "
     >
 
@@ -55,11 +56,10 @@ export default function FeaturedCourseCard({
         "
         style={{
           background:
-            `linear-gradient(135deg, ${course.color}, transparent)`
+          `linear-gradient(135deg, ${course.color}, transparent)`
         }}
       />
 
-      
 
 
       <div className="relative">
@@ -75,9 +75,10 @@ export default function FeaturedCourseCard({
           flex
           items-center
           justify-center
-          group-hover:scale-110
-          transition-transform
           shadow-md
+          transition-transform
+          duration-300
+          group-hover:scale-110
           "
           style={{
             backgroundColor: course.color
@@ -95,8 +96,6 @@ export default function FeaturedCourseCard({
         </div>
 
 
-
-        {/* CONTENT */}
 
         <h3
           className="
@@ -122,16 +121,16 @@ export default function FeaturedCourseCard({
 
 
 
-        {/* ACTION */}
-
-        <button
+        <div
           className="
           mt-4
           flex
           items-center
           gap-2
           font-semibold
-          transition
+          transition-transform
+          duration-300
+          group-hover:translate-x-1
           "
           style={{
             color: course.color
@@ -142,7 +141,7 @@ export default function FeaturedCourseCard({
 
           <ArrowRight size={18}/>
 
-        </button>
+        </div>
 
 
       </div>
@@ -150,4 +149,31 @@ export default function FeaturedCourseCard({
 
     </div>
   );
+
+
+  if(!course.clickable){
+    return (
+      <div className="opacity-75">
+        {content}
+      </div>
+    )
+  }
+
+
+  return (
+    <Link
+      href={`/courses/${course.slug}`}
+      className="
+      group
+      block
+      h-full
+      focus:outline-none
+      focus-visible:ring-2
+      focus-visible:ring-primary
+      "
+    >
+      {content}
+    </Link>
+  )
+
 }

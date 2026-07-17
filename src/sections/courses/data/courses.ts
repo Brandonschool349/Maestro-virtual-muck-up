@@ -98,7 +98,7 @@ export const courses: Course[] = [
       "Toma de notas"
     ],
 
-    image: "/images/courses/zoom.webp",
+    image: "/images/courses/zoom.jpg",
     icon: "/icons/zoom.webp",
 
     video: "",
@@ -157,7 +157,7 @@ export const courses: Course[] = [
       "Toma de notas"
     ],
 
-    image: "/images/courses/excel.webp",
+    image: "/images/courses/excel.jpg",
     icon: "/icons/excel.webp",
 
     video: "",
@@ -216,7 +216,7 @@ export const courses: Course[] = [
       "Toma de notas"
     ],
 
-    image: "/images/courses/powerpoint.webp",
+    image: "/images/courses/powerpoint.jpg",
 
     icon: "/icons/powerpoint.webp",
 
@@ -276,7 +276,7 @@ export const courses: Course[] = [
       "Toma de notas"
     ],
 
-    image: "/images/courses/canva.webp",
+    image: "/images/courses/canva.jpg",
     icon: "/icons/canva.png",
 
     video: "",
@@ -335,7 +335,7 @@ export const courses: Course[] = [
       "Toma de notas"
     ],
 
-    image: "/images/courses/google-classroom.webp",
+    image: "/images/courses/google-classroom.jpg",
     icon: "/icons/classroom.webp",
 
     video: "",
