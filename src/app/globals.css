@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Hit and Run";
+  src: url("/fonts/HitandRun-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 :root {
   --background: #F5F7FF;
   --foreground: #0F172A;
@@ -45,6 +54,156 @@ body {
   }
 }
 
+@keyframes floatTitle {
+
+0%,100%{
+transform:translateY(4px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+@keyframes wave {
+
+0%{
+transform:scale(.9);
+opacity:.15;
+}
+
+50%{
+transform:scale(1.08);
+opacity:.25;
+}
+
+100%{
+transform:scale(.9);
+opacity:.15;
+}
+
+}
+
+
+.animate-wave{
+animation:wave 5s ease-in-out infinite;
+}
+
+
+
+@keyframes waveDelay {
+
+0%{
+transform:scale(.8);
+}
+
+50%{
+transform:scale(1.15);
+}
+
+100%{
+transform:scale(.8);
+}
+
+}
+
+
+.animate-wave-delay{
+animation:waveDelay 5.2s ease-in-out infinite;
+}
+
+@keyframes excelMove {
+
+0%{
+transform:translate(0,0);
+}
+
+100%{
+transform:translate(32px,32px);
+}
+
+}
+
+
+.animate-excelMove{
+animation:excelMove 8s linear infinite;
+}
+
+
+
+@keyframes cellSelect {
+
+0%,100%{
+transform:scale(1.5);
+opacity:10;
+}
+
+50%{
+transform:scale(1.15);
+opacity:.8;
+}
+
+}
+
+
+.animate-cellSelect{
+animation:cellSelect 7s ease-in-out infinite;
+}
+
+@keyframes taskFloat {
+
+0%,100%{
+transform:translateX(15px);
+}
+
+50%{
+transform:translateY(-8px);
+}
+
+}
+
+.animate-taskFloat{
+animation:taskFloat 10s ease-in-out infinite;
+}
+
+@keyframes slideFloat {
+
+0%,100%{
+transform:
+translateY(0)
+rotate(6deg);
+}
+
+
+50%{
+transform:
+translateY(-12px)
+rotate(6deg);
+}
+
+}
+
+
+.animate-slideFloat{
+animation:
+slideFloat 6s ease-in-out infinite;
+}
+
+.animate-floatSlow{
+animation:floatSlow 6s ease-in-out infinite;
+}
+
 .animate-gradient {
-  animation: gradientMove 5s ease infinite;
+  animation: gradientMove 6s linear infinite;
+}
+
+.animate-title {
+  animation: floatTitle 5s ease-in-out infinite;
+}
+
+.animate-title-gradient {
+  animation:
+    floatTitle 5s ease-in-out infinite,
+    gradientMove 6s linear infinite;
 }

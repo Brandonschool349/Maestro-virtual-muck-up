@@ -13,26 +13,32 @@ const tools = [
   {
     name: "WhatsApp",
     color:
-      "bg-[#00BF63]/15 border-[#00BF63]/30 text-[#008A47]",
+      "bg-[#00BF63] text-white border-[#00BF63]",
   },
   {
     name: "Canva",
     color:
-      "bg-[#FF3131]/15 border-[#FF3131]/30 text-[#D82020]",
+      "bg-[#7a4aff] text-white border-[#7a4aff]",
   },
   {
-    name: "Word",
+    name: "Zoom",
     color:
-      "bg-[#1800AD]/15 border-[#1800AD]/30 text-[#1800AD]",
+      "bg-[#185ABD] text-white border-[#185ABD]",
   },
   {
-    name: "Excel",
+    name: "PowerPoint",
     color:
-      "bg-[#FFB000]/20 border-[#FFB000]/40 text-[#B87900]",
+      "bg-[#F97316] text-white border-[#F97316]",
   },
 ];
 
-const featuredCourses = courses.filter(course => course.featured);
+const featuredCourses = courses
+  .filter(course => course.featured)
+  .sort(
+    (a, b) =>
+      (a.featuredOrder ?? 99) -
+      (b.featuredOrder ?? 99)
+  );
 
 export default function CoursesHero() {
 
@@ -106,13 +112,13 @@ blur-[170px]
 <div
 className="
 absolute
-bottom-[-550px]
+bottom-[350px]
 left-[-300px]
 w-[900px]
 h-[900px]
 rounded-full
 bg-green-400/10
-blur-[300px]
+blur-[200px]
 "
 />
 
@@ -285,11 +291,10 @@ Aprende a tu ritmo
 <h1
 className="
 text-6xl
-md:text-8xl
+md:text-7xl
+leading-[1.05]
+tracking-normal
 font-heading
-font-bold
-leading-[0.95]
-tracking-tight
 "
 >
 
@@ -301,10 +306,12 @@ className="
 block
 bg-gradient-to-r
 from-blue-700
-via-cyan-500
-to-blue-600
+via-cyan-600
+to-blue-700
 bg-clip-text
 text-transparent
+bg-[length:200%_auto]
+animate-gradient
 "
 >
 
@@ -389,62 +396,68 @@ ${tool.color}
 
 
 
-
-
 {/* FEATURED COURSES */}
 
 <div
-className="
-mt-14
-mb-6
-text-center
-"
+  className="
+    mt-20
+    mb-10
+    text-center
+    max-w-2xl
+    mx-auto
+  "
 >
+
+
 
 <h2
-className="
-text-xl
-md:text-2xl
-font-semibold
-text-text-primary
-"
+  className="
+    text-4xl
+    md:text-5xl
+    font-heading
+    leading-tight
+    bg-gradient-to-r
+    from-[#16355B]
+    via-[#244A78]
+    to-[#16355B]
+    bg-clip-text
+    text-transparent
+    bg-[length:200%_100%]
+    animate-title-gradient
+  "
 >
-Cursos destacados
-</h2>
+    Cursos destacados
+  </h2>
+
 
 
 </div>
-
-
 
 
 
 {/* FEATURED COURSES */}
 
 <div
-className="
-grid
-grid-cols-1
-md:grid-cols-2
-gap-8
-max-w-5xl
-mx-auto
-animate-fadeUp
-[animation-delay:200ms]
-"
+  className="
+    grid
+    grid-cols-1
+    md:grid-cols-2
+    gap-8
+    max-w-5xl
+    mx-auto
+    animate-fadeUp
+    [animation-delay:200ms]
+  "
 >
 
-{
-featuredCourses.map((course)=>(
-  <FeaturedCourseCard
-    key={course.id}
-    course={course}
-  />
-))
-}
+  {featuredCourses.map((course) => (
+    <FeaturedCourseCard
+      key={course.id}
+      course={course}
+    />
+  ))}
 
 </div>
-
 </div>
 
 

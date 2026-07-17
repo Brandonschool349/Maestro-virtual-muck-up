@@ -2,6 +2,7 @@ import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 
 import type { Course } from "../data/courses";
+import CourseBackground from "./CourseBackground";
 
 
 type FeaturedCourseCardProps = {
@@ -35,6 +36,11 @@ export default function FeaturedCourseCard({
       "
     >
 
+      <CourseBackground
+        pattern={course.backgroundPattern}
+        color={course.color}
+      />
+
 
       {/* COLOR EFFECT */}
 
@@ -52,6 +58,8 @@ export default function FeaturedCourseCard({
             `linear-gradient(135deg, ${course.color}, transparent)`
         }}
       />
+
+      
 
 
       <div className="relative">

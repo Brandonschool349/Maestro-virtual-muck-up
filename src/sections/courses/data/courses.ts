@@ -15,7 +15,16 @@ export interface Course {
   type: CourseType;
 
   featured: boolean;
+  featuredOrder?: number;
+  backgroundPattern:
+  | "grid"
+  | "waves"
+  | "shapes"
+  | "cards"
+  | "slides";
+
   clickable: boolean;
+  
 
   duration: string;
   sessions?: number;
@@ -57,6 +66,10 @@ export const courses: Course[] = [
     type: "Curso",
 
     featured: true,
+
+    featuredOrder: 3,
+
+    backgroundPattern: "waves",
 
     clickable: true,
 
@@ -113,6 +126,10 @@ export const courses: Course[] = [
 
     featured: true,
 
+    featuredOrder: 2,
+
+    backgroundPattern: "grid",
+
     clickable: true,
 
     duration: "5 sesiones",
@@ -166,7 +183,11 @@ export const courses: Course[] = [
 
     type: "Curso",
 
-    featured: false,
+    featured: true,
+
+    featuredOrder: 4,
+
+    backgroundPattern: "slides",
 
     clickable: true,
 
@@ -224,6 +245,10 @@ export const courses: Course[] = [
 
     featured: true,
 
+    featuredOrder: 5,
+
+    backgroundPattern: "shapes",
+
     clickable: true,
 
     duration: "5 sesiones",
@@ -278,6 +303,10 @@ export const courses: Course[] = [
     type: "Curso",
 
     featured: true,
+
+    featuredOrder: 1,
+
+    backgroundPattern: "cards",
 
     clickable: true,
 
