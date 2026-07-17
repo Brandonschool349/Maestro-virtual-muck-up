@@ -2,7 +2,6 @@ import CategoryFilter from './components/CategoryFilter';
 import CoursesCTA from './components/CoursesCTA';
 import CoursesHero from './components/CoursesHero';
 import CourseGrid from './components/CourseGrid';
-import FeaturedCourses from './components/FeaturedCourses';
 import LearningPath from './components/LearningPath';
 
 export default function CoursesSection() {
@@ -27,8 +26,6 @@ export default function CoursesSection() {
 
           </section>
 
-
-          <FeaturedCourses />
 
           <CourseGrid />
 
