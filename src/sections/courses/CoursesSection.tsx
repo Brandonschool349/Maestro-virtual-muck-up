@@ -1,21 +1,43 @@
-import Container from '@/components/ui/Container';
+import CategoryFilter from './components/CategoryFilter';
+import CoursesCTA from './components/CoursesCTA';
+import CoursesHero from './components/CoursesHero';
+import CourseGrid from './components/CourseGrid';
+import LearningPath from './components/LearningPath';
 
 export default function CoursesSection() {
   return (
-    <section aria-labelledby="courses-section-title" className="py-16 sm:py-20 lg:py-24">
-      <Container size="xl">
-        <div className="rounded-2xl border border-border bg-surface p-8 shadow-sm sm:p-12">
-          <p className="mb-3 text-sm font-semibold uppercase tracking-[0.24em] text-primary">
-            Próximamente
-          </p>
-          <h2 id="courses-section-title" className="text-2xl font-semibold tracking-tight text-text-primary sm:text-3xl">
-            Cursos en desarrollo
-          </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-7 text-text-secondary">
-            Aquí se mostrarán los cursos destacados y las opciones de aprendizaje de Maestro Virtual.
-          </p>
+    <section aria-labelledby="courses-section-title">
+
+      <CoursesHero />
+
+      <div className="py-16 sm:py-20 lg:py-24">
+
+        <div className="mx-auto w-full px-4 sm:px-6 lg:px-8 max-w-7xl space-y-10">
+
+          <section aria-labelledby="courses-categories-title" className="space-y-4">
+            <h3 
+              id="courses-categories-title"
+              className="text-lg font-semibold text-text-primary"
+            >
+              Categorías
+            </h3>
+
+            <CategoryFilter />
+
+          </section>
+
+
+          <CourseGrid />
+
+          <LearningPath />
+
+          <CoursesCTA />
+
+
         </div>
-      </Container>
+
+      </div>
+
     </section>
   );
 }
