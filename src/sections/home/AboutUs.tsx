@@ -17,7 +17,7 @@ export const AboutUs: React.FC = () => {
         {/* Columna Derecha: Ilustración */}
         <div className="w-full aspect-square md:aspect-[4/3] rounded-3xl overflow-hidden shadow-lg relative border border-gray-100 dark:border-gray-700">
           <img
-            src="/assets/whoarewe.png"
+            src="/assets/experienceimages/nosotros.jpeg"
             alt="Sobre Nosotros - Maestro Virtual"
             className="w-full h-full object-cover"
           />

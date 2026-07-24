@@ -2,7 +2,10 @@ import React from 'react';
 
 export const Impact: React.FC = () => {
   return (
-    <section className="w-full bg-[#1800AD] py-20 px-4 md:px-8">
+    <section className="w-full bg-gradient-to-br
+from-primary
+via-indigo-600
+to-brand-red py-20 px-4 md:px-8">
       <div className="max-w-4xl mx-auto text-center flex flex-col items-center gap-8">
         <h2 className="font-heading text-3xl md:text-4xl text-white/90">
           Nuestro Impacto
