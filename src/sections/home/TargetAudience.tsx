@@ -56,7 +56,7 @@ export const TargetAudience: React.FC = () => {
   return (
     <section className="px-4 md:px-8 max-w-6xl mx-auto w-full flex flex-col gap-16 py-12">
       <div>
-        <h2 className="font-heading text-4xl md:text-5xl text-brand-yellow mb-8">
+        <h2 className="font-heading text-4xl md:text-5xl text-brand-yellow mb-8 text-center">
           ¿A quién va dirigido?
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -68,13 +68,14 @@ export const TargetAudience: React.FC = () => {
 
       <div>
         <div className="mb-8">
-          <h3 className="font-heading text-3xl md:text-4xl text-gray-800 dark:text-gray-100 text-center md:text-left">
+          <h3 className="font-heading text-3xl md:text-4xl text-primary text-center ">
             Galería de Experiencias
           </h3>
         </div>
 
         {/* Carrusel continuo (Marquee) con CSS */}
-        <div className="overflow-hidden w-full relative group -mx-4 md:mx-0">
+        <div className=" relative left-1/2 w-screen -translate-x-1/2 overflow-hidden group">
+
           <style>{`
             @keyframes slow-scroll {
               0% { transform: translateX(0); }
