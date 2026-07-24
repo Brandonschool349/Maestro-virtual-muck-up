@@ -351,12 +351,17 @@ export default function Navbar() {
               size="sm"
               className={clsx(
                 `
+                bg-gradient-to-br
+                from-primary
+                via-indigo-600
+                to-brand-red
                 group
 
                 hidden
                 md:inline-flex
 
                 rounded-full
+               
 
                 shadow-lg
 
@@ -396,6 +401,7 @@ export default function Navbar() {
             justify-center
 
             rounded-full
+            
 
             border
             border-white/50
