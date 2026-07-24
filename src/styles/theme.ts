@@ -1,23 +1,21 @@
 export const theme = {
   colors: {
     brand: {
-      primary: '#1800AD',
-      red: '#FF3131',
-      yellow: '#FFB000',
-      green: '#00BF63',
+      primary: '#2563EA',
+      green: '#10B982',
     },
     background: {
-      canvas: '#F5F7FF',
+      canvas: '#F8F9FB',
       base: '#FFFFFF',
-      elevated: '#F8FAFC',
-      muted: '#EEF2FF',
+      elevated: '#F6F6FE',
+      muted: '#E1E8F0',
       overlay: 'rgba(15, 23, 42, 0.06)',
     },
     surface: {
       primary: '#FFFFFF',
-      secondary: '#F8FAFC',
-      tertiary: '#EEF2F7',
-      accent: '#F4F7FF',
+      secondary: '#F8F9FB',
+      tertiary: '#E1E8F0',
+      accent: '#F6F6FE',
     },
     text: {
       primary: '#0F172A',
@@ -30,19 +28,19 @@ export const theme = {
       subtle: '#E2E8F0',
       strong: '#CBD5E1',
       accent: '#C7D2FE',
-      focus: '#1800AD',
+      focus: '#2563EA',
     },
     state: {
-      success: '#00BF63',
-      warning: '#FFB000',
-      error: '#FF3131',
-      info: '#1800AD',
-    },
+    success:'#10B982',
+    warning:'#F59E0B',
+    error:'#EF4444',
+    info:'#2563EA',
+    }
   },
   typography: {
     fontFamily: {
-      heading: '"Hit and Run", sans-serif',
-      body: '"Josefin Sans", sans-serif',
+      heading: '"Times New Roman", serif',
+      body: '"Times New Roman", serif',
     },
     fontSize: {
       xs: '0.75rem',
