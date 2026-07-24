@@ -1,13 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap');
+
 @import "tailwindcss";
 
-@font-face {
-  font-family: "Hit and Run";
-  src: url("/fonts/HitandRun-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 
 
 :root {
@@ -16,24 +9,24 @@
 }
 
 @theme inline {
-  --color-primary: #1800AD;
-  --color-brand-red: #FF3131;
-  --color-brand-yellow: #FFB000;
-  --color-brand-green: #00BF63;
 
-  --color-background: #F5F7FF;
-  --color-surface: #FFFFFF;
+  --color-primary:#2563EA;
+  --color-brand-green:#10B982;
 
-  --color-text-primary: #0F172A;
-  --color-text-secondary: #334155;
+  --color-background:#F8F9FB;
+  --color-surface:#FFFFFF;
 
-  --color-border: #E2E8F0;
+  --color-text-primary:#0F172A;
+  --color-text-secondary:#475569;
 
-  --font-heading: "Hit and Run", sans-serif;
-  --font-body: "Josefin Sans", sans-serif;
-  --font-sans: "Josefin Sans", sans-serif;
+  --color-border:#E1E8F0;
+
+
+  --font-heading:"Times New Roman", serif;
+  --font-body:"Times New Roman", serif;
+  --font-sans:"Times New Roman", serif;
+
 }
-
 
 body {
   background: var(--background);

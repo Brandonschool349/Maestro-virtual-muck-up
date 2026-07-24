@@ -4,6 +4,7 @@ import {
   Mail,
   ChevronRight,
 } from "lucide-react";
+import Image from "next/image";
 
 import {
   FaFacebookF,
@@ -122,66 +123,28 @@ export default function Footer() {
         >
           {/* Brand */}
 
-          <div className="space-y-8">
+          <div className="space-y-3">
             <Link
-              href="/"
+            href="/"
+            className="
+            inline-flex
+            items-center
+            "
+          >
+            <Image
+              src="/images/logo/maestrovirtual.webp"
+              alt="Maestro Virtual"
+              width={280}
+              height={60}
+              priority
               className="
-              inline-flex
-              items-center
-              gap-4
+              object-contain
+              transition-transform
+              duration-300
+              hover:scale-105
               "
-            >
-              <div
-                className="
-                flex
-                h-14
-                w-14
-
-                items-center
-                justify-center
-
-                rounded-2xl
-
-                bg-gradient-to-br
-                from-primary
-                via-indigo-600
-                to-brand-red
-
-                text-lg
-                font-bold
-                text-white
-
-                shadow-xl
-                "
-              >
-                MV
-              </div>
-
-              <div>
-                <h2
-                  className="
-                  font-heading
-                  text-3xl
-                  text-text-primary
-                  "
-                >
-                  Maestro
-                </h2>
-
-                <p
-                  className="
-                  text-xs
-                  uppercase
-
-                  tracking-[0.28em]
-
-                  text-text-secondary
-                  "
-                >
-                  Virtual
-                </p>
-              </div>
-            </Link>
+            />
+          </Link>
 
             <p
               className="

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { ArrowRight, Menu, User } from "lucide-react";
 import Link from "next/link";
 import clsx from "clsx";
-
+import Image from "next/image";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 
@@ -91,73 +91,30 @@ export default function Navbar() {
             `
         )}
       >
-        {/* Logo */}
+            {/* Logo */}
 
-        <Link
-          href="/"
-          className="
-          group
-          flex
-          items-center
-          gap-3
-          "
-        >
-          <div
-            className={clsx(
-              `
-              flex
-              items-center
-              justify-center
-
-              rounded-full
-
-              bg-gradient-to-br
-              from-primary
-              via-indigo-600
-              to-brand-red
-
-              text-sm
-              font-bold
-              text-white
-
-              shadow-lg
-
-              transition-all
-              duration-500
-
-              group-hover:scale-105
-              group-hover:rotate-6
-              `,
-              scrolled ? "h-10 w-10" : "h-11 w-11"
-            )}
-          >
-            MV
-          </div>
-
-          <div className="leading-none">
-            <p
-              className="
-              font-heading
-              text-xl
-              tracking-wide
-              text-text-primary
-              "
-            >
-              Maestro
-            </p>
-
-            <p
-              className="
-              text-[11px]
-              uppercase
-              tracking-[0.25em]
-              text-text-secondary
-              "
-            >
-              Virtual
-            </p>
-          </div>
-        </Link>
+    <Link
+      href="/"
+      className="
+      group
+      flex
+      items-center
+      "
+    >
+      <Image
+        src="/images/logo/maestrovirtual.webp"
+        alt="Maestro Virtual"
+        width={160}
+        height={50}
+        priority
+        className="
+        object-contain
+        transition-transform
+        duration-300
+        group-hover:scale-105
+        "
+      />
+    </Link>
 
         {/* Links */}
 
@@ -351,10 +308,7 @@ export default function Navbar() {
               size="sm"
               className={clsx(
                 `
-                bg-gradient-to-br
-                from-primary
-                via-indigo-600
-                to-brand-red
+                bg-primary
                 group
 
                 hidden
